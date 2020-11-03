@@ -5,18 +5,18 @@ php zote init doc:../project
 ```
 After init prject, file structure will be
 ```
- []zote-framework
- []project
-     .env
-     []public
-         index.php
-         .htaccess
-         robots.txt
-     []mobile
-         User.php
-     []migration
-         createUser.php
-     []controller
-         userController.php
-     []route.php
+ [dir]zote-framework
+ [dir]project
+     [file].env
+     [dir]public
+        [file]index.php
+        [file].htaccess
+        [file]robots.txt
+     [dir]mobile
+        [file]User.php
+     [dir]migration
+        [file]createUser.php
+     [dir]controller
+        [file]userController.php
+     [file]route.php
 ```
