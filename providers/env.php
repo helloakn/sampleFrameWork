@@ -4,13 +4,13 @@ Developed by : Akn via Zote Innovation
 Date : 28-Oct-2020
 Last Modify Date : 28-Oct-2020
 */
-namespace Zote\Application;
-use Zote\Application\ExceptionHandler;
+namespace Zote;
+use Zote\ExceptionHandler;
 class Env{
     private static $_instance = null;
     
     function _get($args){
-        $file = fopen("../.env","r");
+        $file = fopen(".env","r");
         $envData = [];
         while(! feof($file))
         {
@@ -45,4 +45,5 @@ class Env{
     }
 }
 
+//echo Env::get('DB_NAME');
 ?>

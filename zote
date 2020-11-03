@@ -1,4 +1,4 @@
 #!/usr/bin/env php
 <?php
-    include 'application/cli/autoload.php';
+    include 'main/autoload.php';
 ?>
