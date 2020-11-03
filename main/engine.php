@@ -5,6 +5,7 @@ Date : 3-Nov-2020
 Last Modify Date : 3-Nov-2020
 */
 namespace API\Application\Main;
+use API\Application\Main\InitProject;
 
 class Engine{
     public $argv = [];
@@ -48,10 +49,19 @@ class Engine{
         echo $this->color[$color].$text.($newLine=='no'?"":"\n");
         echo $this->color['White'];
     }
+    
     function start(){
             #echo "starting"; 
-            $command = $this->argv[1];
             echo $this->_echo("Blue",$command);
+            $command = $this->argv[1];
+            switch($command){
+                case 'init':
+                    
+                    $initPro = new InitProject($this->argv);
+                break;
+            }
+            
+            
 
     }
 }

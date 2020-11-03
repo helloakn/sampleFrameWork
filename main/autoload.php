@@ -8,5 +8,6 @@ Last Modify Date : 26-Oct-2020
 include 'providers/env.php';
 include 'schema/database.php';
 include 'schema/table.php';
+include 'InitProject.php';
 include 'engine.php';
 ?>
