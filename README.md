@@ -4,6 +4,7 @@
 php zote init doc:../project
 ```
 After init prject, file structure will be
+```
 * zote-framework
 * project
     * .env
@@ -18,3 +19,4 @@ After init prject, file structure will be
     * controller
         * userController.php
     * route.php
+```
