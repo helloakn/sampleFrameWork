@@ -1,6 +1,8 @@
 # Zote
 ## Create Project
 ```
+php zote-framework/zote init doc:../project
+or
 php zote init doc:../project
 ```
 After init prject, file structure will be

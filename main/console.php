@@ -51,21 +51,19 @@ class Engine{
     }
     
     function start(){
-            #echo "starting"; 
-            echo $this->_echo("Blue",$command);
-            $command = $this->argv[1];
-            switch($command){
-                case 'init':
-                    
-                    $initPro = new InitProject($this->argv);
-                break;
-            }
-            
-            
-
+        #echo "starting"; 
+        echo $this->_echo("Blue",$command);
+        $command = $this->argv[1];
+        switch($command){
+            case 'init':
+                
+                $initPro = new InitProject($this->argv);
+            break;
+        }
     }
 }
 
 $engine = new Engine($argv);
 $engine->start();
+# php zote-framework/zote init
 ?>

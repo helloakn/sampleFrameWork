@@ -2,24 +2,60 @@
 namespace API\Application\Main;
 class InitProject{
     private $argv = [];
+    private $cmd = "";
     function __construct($args) {
         $this->$args = $args;
+        if(count($this->$args)>=2){
+            $this->cmd = $this->$args[1];
+            //echo $this->cmd;
+            $this->custom_copy(dirname(__FILE__)."/template",$doc);
+        }
+        else{
+            return false;
+        }
+        /*
         foreach($this->$args as $arg){
             $cmd = explode(":",$arg);
+            
             if(count($cmd)>1){
-                echo $cmd[0];
                 if($cmd[0]=="doc"){
                     $doc = $cmd[1];
-                    $this->createDir($doc);
-                    $this->createDir($doc."/public");
-                    $this->createDir($doc."/model");
-                    $this->initEnv($doc."/.env");
+                    $this->custom_copy(dirname(__FILE__)."/template",$doc);
                 }
             }
         }
+        */
+    }
+    function custom_copy($src, $dst) {  
+  
+        // open the source directory 
+        $dir = opendir($src);  
+      
+        // Make the destination directory if not exist 
+        $this->createDir($dst);  
+      
+        // Loop through the files in source directory 
+        while( $file = readdir($dir) ) {  
+      
+            if (( $file != '.' ) && ( $file != '..' )) {  
+                if ( is_dir($src . '/' . $file) )  
+                {  
+                    // Recursively calling custom copy function 
+                    // for sub directory  
+                    $this->custom_copy($src . '/' . $file, $dst . '/' . $file);  
+                }  
+                else {  
+                    copy($src . '/' . $file, $dst . '/' . $file);  
+                }  
+            }  
+        }  
+        closedir($dir); 
     }
     private function createDir($dir){
+       // echo $dir;exit;
+       //var_dump(is_dir($dir));exit;
         if(!is_dir($dir)){
+            //echo "created";
             mkdir($dir);
         }
     }

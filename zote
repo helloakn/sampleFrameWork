@@ -1,4 +1,6 @@
 #!/usr/bin/env php
 <?php
-    include 'main/autoload.php';
+    #$dir =  str_replace("autoload","",dirname(__FILE__));
+    $dir = dirname(__FILE__);
+    include $dir.'/main/autoload-cli.php';
 ?>
