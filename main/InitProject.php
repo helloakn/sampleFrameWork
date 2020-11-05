@@ -8,7 +8,8 @@ class InitProject{
         if(count($this->$args)>=2){
             $this->cmd = $this->$args[1];
             //echo $this->cmd;
-            $this->custom_copy(dirname(__FILE__)."/template",$doc);
+            //echo dirname(__FILE__);exit;
+            $this->custom_copy(dirname(__FILE__)."/template",'./');
         }
         else{
             return false;

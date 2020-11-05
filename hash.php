@@ -4,7 +4,7 @@ Developed by : Akn via Zote Innovation
 Date : 26-Oct-2020
 Last Modify Date : 26-Oct-2020
 */
-namespace API\Application;
+namespace zFramework;
 
 class Hash{
 

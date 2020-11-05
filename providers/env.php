@@ -4,13 +4,13 @@ Developed by : Akn via Zote Innovation
 Date : 28-Oct-2020
 Last Modify Date : 28-Oct-2020
 */
-namespace Zote;
-use Zote\ExceptionHandler;
+namespace zFramework\providers;
+use zFramework\providers\ExceptionHandler;
 class Env{
     private static $_instance = null;
     
     function _get($args){
-        $file = fopen(".env","r");
+        $file = fopen("../.env","r");
         $envData = [];
         while(! feof($file))
         {

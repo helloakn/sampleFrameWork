@@ -37,7 +37,7 @@ class Auth{
     private static $_instance = null;
 
     function __construct() {
-        $this->database = new Database();
+        $this->database =  Database::Instance();
     }
     static function guard($usr){
         self::$_instance = (self::$_instance === null ? new self : self::$_instance);

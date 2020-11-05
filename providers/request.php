@@ -4,14 +4,14 @@ Developed by : Akn via Zote Innovation
 Date : 26-Oct-2020
 Last Modify Date : 26-Oct-2020
 */
-namespace API\Application;
-use API\Application\Schema\Database;
+namespace zFramework\providers;
+use zFramework\Schema\Database;
 class Request{
     
     private $db = NULL;
     private static $_instance = null;
     function __construct($db=NULL) {
-        $this->db = $db;
+        $this->db = Database::Instance();
     }
     private function getFilter($arr){
         if(!is_array($arr)){

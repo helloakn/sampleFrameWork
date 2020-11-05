@@ -4,9 +4,9 @@ Developed by : Akn via Zote Innovation
 Date : 28-Oct-2020
 Last Modify Date : 28-Oct-2020
 */
-namespace Zote\Application;
-use Zote\Application\ExceptionHandler;
-use API\Application\Request;
+namespace zFramework\providers;
+use zFramework\providers\ExceptionHandler;
+use zFramework\providers\Request;
 class Validation{
 
 }
@@ -27,7 +27,8 @@ class Validator{
     }
     function _notnull($args){
         $value = Request::get($this->_key);
-        if($value==null){
+        if($value==null || $value==""){
+            $this->_isValidate = false;
             $this->_error[$this->_key][] = count($args)==1 ? $args[0] : $this->_key." should not be null";
         }
         return $this;  
@@ -35,7 +36,6 @@ class Validator{
     function _min($args){
         $value = Request::get($this->_key);
         if($args[0]>strlen($value)){
-            //echo "yes";
             $this->_isValidate = false;
             $this->_error[$this->_key][] = count($args)==2 ? $args[1] : "Minimum length of ". $this->_key." is ".$args[0];
            
@@ -48,7 +48,6 @@ class Validator{
         return $this;
     }
     function _error($args){
-        //var_dump(get_object_vars($this->_error));
         return $this->_error;
     }
     function _validate($args){
@@ -61,20 +60,12 @@ class Validator{
            
     }
     function _custom($args){
-        //var_dump($args);exit;
-        //var_dump($args[0]);
-        //echo json_encode($args);
-        //exit;
-        //echo count($args[0]);
         call_user_func($args[0],$this);
-        //$args[0]($this);
-        //return $this->_isValidate;
         return $this;
     }
     function _rule($args){
         
         call_user_func($args[0],$this);
-        //return $this->_isValidate;
         return $this;
     }
 

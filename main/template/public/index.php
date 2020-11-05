@@ -4,6 +4,6 @@ Developed by : Akn via Zote Innovation
 Date : 26-Oct-2020
 Last Modify Date : 26-Oct-2020
 */
-    include '../application/app.php'
+    include '../zframework/app.php'
     
 ?>
